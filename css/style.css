@@ -1,0 +1,221 @@
+body{
+	font-family: sans-serif;
+	margin: 0;
+	background: #FFF;
+}
+/* .banner{
+	width: 100%;
+	height: 250px;
+	background-color: #333;
+} */
+.nav-bar{
+	width: 100%;
+	/* height: 22px; */
+	background-color: #FFF;
+	padding: 14px 20px;
+	box-sizing: border-box;         	/*去除滚动条 */
+	position: fixed;                  /*置顶导航*/
+	z-index: 1000;                   /*有时会出现滑动时图层在置顶项上面，需将置顶项z-index设置大一些*/
+	transition: all .3s;
+}
+.nav-bar::after{
+	content:"";
+	display: block;
+	clear: both;              /*放同一行的两个block需加上float，父元素需清除float属性 */
+}
+.navbar-hide-top{
+	transform: translateY(-50px);
+	transition: all .3s;
+}
+
+.nav-title{
+	color: black;
+	font-weight: bold;
+	float: left;
+}
+ul.nav-list{
+	color: black;
+	float: right;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+ul.nav-list>li{
+	display: inline-block;
+	padding:  0px 8px;
+}
+
+.top-title{
+	padding-top: 120px;
+	padding-left: 100px;
+	display: inline-block;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+
+}
+
+.container-fluid{
+	/* width: 90%;
+	height: 600px;
+	margin-left: auto;
+	margin-right: auto; */
+	/* display: flex; */
+	/* flex-direction: column;                 /*竖向排列 */ */
+	/* flex-wrap: wrap; */
+	/* justify-content: space-between;        /*弹性布局：center所有元素居中;space-around中间空隙 */ */
+	/* align-items: center;                   /*对齐：居中对齐 */ */
+}
+
+.select-btn-group{
+	display: flex;
+	justify-content: center;
+	margin-top: 20px;
+	transition: all 0.3s;
+}
+.select-btn-group>.btn-select{
+	padding: 10px 24px;
+	margin-left: 16px;
+	margin-right: 16px;
+	border: 1px solid #ddd;
+	border-radius: 24px;
+	transition: all 0.3s;
+}
+.select-btn-group>.btn-select:hover{
+	background-color: #5f00f0;
+	color: white;
+	border: 1px solid #5f00f0;
+	transition: all 0.3s;
+}
+.active{
+	background-color: #5f00f0;
+	color: white;
+	border: 1px solid #5f00f0;
+}
+
+.row{
+	padding: 8px;
+}
+
+.card{
+	/* width: 90%; */
+	height: 250px;
+	background: #FFF;
+	margin-left: auto;
+	margin-right: auto;
+	/* background-image: url(../img/brain.png); */
+	background-size: cover;
+	background-position: center;
+	transition: all .3s;
+}
+.card:hover{
+	transform: translateY(-2px);
+	box-shadow: 0 2px 16px rgba(0, 30, 70, 0.2);
+	/* background-position: 50% 100%; */
+	transition: all .2s;
+}
+
+.mask{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	/* background-color: rgba(255, 255, 255, 0.7); */
+	background: transparent;
+	border-radius: 6px;
+	display: flex;
+	align-items: center;
+	padding: 14px;
+}
+/* .card>.mask{
+	opacity: 0;
+	transition: all .2s;
+} */
+.card:hover>.mask{
+	/* opacity: 1; */
+	background: rgba(255, 255, 255, 0.7);
+	transition: all .2s;
+}
+.txt-1{
+	display: none;
+	transition: all .2s;
+}
+.title-1{
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	right: 0;
+	bottom: 0;
+	font-weight: bold;
+	font-size: 24px;
+	color: white;
+	transition: all .2s
+}
+.txt-container:hover>.txt-1{
+	display: inline-block;
+}
+.txt-container:hover>.title-1{
+	color: black;
+	margin-top: 20px;
+	font-weight: bold;
+}
+
+.section{
+	width: 100%;
+	/* height: 200px;                           /*去除高度后内部文字自适应 */ */
+	border: 1px solid #ddd;
+	background-color: red;
+	box-sizing: border-box;
+	overflow: hidden;                          /*不让内部文字溢出 */
+	display: flex;
+	align-items: center;
+	padding: 8px;
+}
+.item{
+	width:50%;
+	height: 100%;
+	background-color: #ddd;
+	margin: 8px;
+	/* padding: 20px; */
+}
+.item:nth-child(1){
+	order: 1;                               /*把第二个元素移到最后 */
+	flex-grow: 1;                           /*大于0跟着浏览器变大 */
+}
+.item:nth-child(2){
+	order: 1;
+	flex-grow: 1;
+}
+@media only screen and (max-width: 600px) {
+	.item{
+		width: 100%!important;
+	}
+}
+.cover{
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.4);
+	/* background: transparent; */
+	display: none;                         /*隐藏整个cover */
+}
+.item:hover .cover{
+	/* background-color: rgba(0,0,0,0.4); */
+	display: inline-block;
+}
+
+.to-top{
+	width: 46px;
+	height: 46px;
+	background-color: white;
+	border-radius: 50px;
+	box-shadow: 0 0 12px rgba(0,0,0,0.2);
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+}
+.txt-top{
+	font-weight: bold;
+	padding-top: 10px;
+	padding-left: 10px;
+}
