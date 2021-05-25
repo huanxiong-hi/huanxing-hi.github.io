@@ -21,11 +21,11 @@
 	transition: all .3s;
 	box-shadow: 0 0.8px 0px rgba(0, 70, 30, 0.1);
 }
-/* .nav-bar::after{
+.nav-bar::after{
 	content:"";
 	display: block;
 	clear: both;              /*放同一行的两个block需加上float，父元素需清除float属性 */
-} */
+}
 .navbar-hide-top{
 	transform: translateY(-80px);
 	transition: all .5s;
