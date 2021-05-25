@@ -121,7 +121,20 @@ ul.nav-list>li:hover{
 	background: rgba(255, 255, 255, 0.2);
 	margin: 4px 4px;
 }
+.button:hover{
+	text-decoration: none;
+	cursor: pointer;
+	background-color: rgba(255, 255, 255, 0.3);
+}
 
+.button-text{
+	text-decoration: none;
+	color: rgba(255, 255, 255, 1);
+}
+.button-text:hover{
+	text-decoration: none;
+	color: rgba(255, 255, 255, 1);
+}
 
 background: rgba(255, 255, 255, 0.1);
 border: 2px solid rgba(255, 255, 255, 0.2);
