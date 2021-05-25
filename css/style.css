@@ -55,6 +55,19 @@ ul.nav-list>li:hover{
 	color: #5f00f0;
 }
 
+.text-nav{
+	text-decoration: none;
+	color: black;
+}
+.text-nav:hover{
+	cursor: pointer;
+	color: #5f00f0;
+}
+.text-nav:active{
+	cursor: pointer;
+	color: #5f00f0;
+}
+
 .chip{
 	display: flex;
 	flex-direction: row;
