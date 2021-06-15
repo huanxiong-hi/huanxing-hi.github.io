@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scaLe=1, minimum-scaLe=1.0, maximum-scaLe=1.0, user-scalable=no">
 	<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	
+
 	<!-- Hotjar Tracking Code for https://huanxiong-hi.github.io/ -->
 	<script>
 	    (function(h,o,t,j,a,r){
@@ -110,9 +110,11 @@
 	<img class="img" src="img/铭腾-13.png"/>
 	<H6 style="font-weight: 200; color: rgba(158, 162, 171, 1);letter-spacing: 0.5px;font-style: normal;text-align: left;"><将结果表保存至看板></H6>
 	<img class="img" src="img/铭腾-14.png"/>
+	<img class="img" src="img/铭-2.gif"/>
 	<H6 style="font-weight: 200; color: white; letter-spacing: 0.5px;font-style: normal;text-align: left;">------</H6>
 	<H6 style="font-weight: 200; color: rgba(158, 162, 171, 1);letter-spacing: 0.5px;font-style: normal;text-align: left;">2.一步到位：项目前期，由于客户需求非常多，而大部分都是针对图表表格的功能，一开始，我们的项目经理认为应该将客户需求按优先级进行排期的开发，但是经过调研和对方案的梳理，我发现客户实际上使用我们的产品只是为了获取数据，由于分析维度众多，用户最终还是需要进入excel进行编辑，并且，用户会在一个excel里维护全部相关的数据表，而不是将图表一个个下载下来再拖入excel里汇总，通过这样的调研洞察结果，我们最终决定砍掉大部分excel相关的功能，而只保留了复制和下载功能，并将复制按钮作为primary按钮，<span style="background-color: rgba(255, 211, 53, 0.44);">成功说服了客户减少功能的堆叠，极大的减少开发成本。</span></H6>
 	<img class="img" src="img/铭腾-16.png"/>
+	<img class="img" src="img/铭-1.gif"/>
 	<H6 style="font-weight: 200; color: white;letter-spacing: 0.5px;font-style: normal;text-align: left;">-------</H6>
 	<H6 style="font-weight: 200; color: rgba(158, 162, 171, 1);letter-spacing: 0.5px;font-style: normal;text-align: left;">3.另外，我们还设计了<span style="background-color: rgba(255, 211, 53, 0.44);">一键导出报告</span>的功能，因为客户大部分场景是需要PPT做汇报，对于一些月报、年报来说，内容固定，在和开发沟通后，我们采取利用固定PPT模板的取值的方式达到可以直接生成导出固定的ppt模板，而用户无需再重新制作一遍PPT。</H6>
 </div>
@@ -201,6 +203,33 @@
 			}
 		})
 	})
+
+	$(".img").click(function () {
+		  var imgsrc = $(this).attr("src");
+		  var opacityBottom = '<div id="opacityBottom" style="display: none"><img class="bigImg" src="'+ imgsrc +'" ></div>';
+		  $(document.body).append(opacityBottom);
+		  toBigImg();//变大函数
+		});
+		function toBigImg(){
+		  $("#opacityBottom").addClass("opacityBottom");
+		  $("#opacityBottom").show();
+		  $("html,body").addClass("none-scroll");//下层不可滑动
+		  $(".bigImg").addClass("bigImg");
+		  /*隐藏*/
+		  $("#opacityBottom").bind("click",clickToSmallImg);
+		  $(".bigImg").bind("click",clickToSmallImg);
+		  var imgHeight = $(".bigImg").prop("height");
+		  if(imgHeight < h){
+		    $(".bigImg").css({"top":(h-imgHeight)/2 + 'px'});
+		  }else{
+		    $(".bigImg").css({"top":'0px'});
+		  }
+		  function clickToSmallImg() {
+		    $("html,body").removeClass("none-scroll");
+		    $("#opacityBottom").remove();
+		  }
+		};
+
 </script>
 
 </body>

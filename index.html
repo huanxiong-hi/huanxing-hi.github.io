@@ -33,9 +33,38 @@
 	</div>
 
 	<div class="top-title">
-		<p style="font-family:Futura; font-size: 100px">HELLO! I'm SAIGE.👋</p>
-		<p style="font-family:Futura; color: grey; font-size: 20px">作为一位产品设计师，我目前致力于工具类产品、大数据产品解决方案，努力将复杂的流程转化为直观和无缝的体验。</p>
+		<p style="font-family:Futura; font-size: 80px">Hello, I’m Saige.</p>
+		<p style="font-family:Futura; color: grey; font-size: 20px">作为一位UX/产品设计师，我目前致力于工具类产品、大数据产品解决方案，受可用性、文化和社区的启发，努力将复杂的流程转化为直观和无缝的体验。</p>
+		<!-- <img class="img" src="img/1.png" alt="" width="100%" height="100%"> -->
 	</div>
+
+<script type="text/javascript">
+	$(".img").click(function () {
+		  var imgsrc = $(this).attr("src");
+		  var opacityBottom = '<div id="opacityBottom" style="display: none"><img class="bigImg" src="'+ imgsrc +'" ></div>';
+		  $(document.body).append(opacityBottom);
+		  toBigImg();//变大函数
+		});
+		function toBigImg(){
+		  $("#opacityBottom").addClass("opacityBottom");
+		  $("#opacityBottom").show();
+		  $("html,body").addClass("none-scroll");//下层不可滑动
+		  $(".bigImg").addClass("bigImg");
+		  /*隐藏*/
+		  $("#opacityBottom").bind("click",clickToSmallImg);
+		  $(".bigImg").bind("click",clickToSmallImg);
+		  var imgHeight = $(".bigImg").prop("height");
+		  if(imgHeight < h){
+		    $(".bigImg").css({"top":(h-imgHeight)/2 + 'px'});
+		  }else{
+		    $(".bigImg").css({"top":'0px'});
+		  }
+		  function clickToSmallImg() {
+		    $("html,body").removeClass("none-scroll");
+		    $("#opacityBottom").remove();
+		  }
+		};
+	</script>
 
 	<div class="select-btn-group">
 		<div class="btn-select active" id="all-tag" style="cursor: pointer;">全部</div>
@@ -75,6 +104,45 @@
 	</script>
 
 	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-4">
+				<a href="https://huanxiong-hi.github.io/portfolio:营销数据分析平台.html">
+					<div class="card UX" style="background-image: url(img/BI-1.gif); background-size: cover; background-position: center center; cursor: pointer;">
+						<div class="mask">
+							<div class="txt-container">
+								<div class="title-1">营销数据分析平台</div>
+								<div class="txt-1">2021</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4">
+				<a href="https://huanxiong-hi.github.io/portfolio:投资管理桌面.html">
+					<div class="card UX" style="background-image: url(img/标准-1.gif); background-size: cover; background-position: center center; cursor: pointer;">
+						<div class="mask">
+							<div class="txt-container">
+								<div class="title-1">投资管理桌面</div>
+								<div class="txt-1">2021</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+			<div class="col-lg-4">
+				<a href="https://huanxiong-hi.github.io/article:如何衡量dashboardGSM.html">
+					<div class="card Other" style="background-image: url(img/GSM-1.png); background-size: cover; background-position: center center; cursor: pointer;">
+						<div class="mask">
+							<div class="txt-container">
+								<div class="title-1">如何衡量dashboard设计的GSM指标</div>
+								<div class="txt-1">2021</div>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+
 		<div class="row">
 			<div class="col-lg-4">
 				<a href="https://huanxiong-hi.github.io/portfolio:数据上报.html">
